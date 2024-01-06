@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+   prefHeight="728.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21"
+   xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="700.0" prefWidth="232.0" style="-fx-background-color: #ccebff;">
+         <children>
+            <Pane layoutX="16.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="aimsImage" fitHeight="137.0" fitWidth="168.0" layoutX="19.0"
+                     layoutY="14.0" pickOnBounds="true" preserveRatio="true"
+                     style="-fx-cursor: hand;">
+                     <image>
+                        <Image
+                           url="file:/E:/TLH20231/TKXDPM/BTL-TKXDPM/TKXDPM.KHMT.20231-03/AIMS/assets/images/Logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="2.0" layoutY="151.0" prefHeight="37.0"
+                     prefWidth="196.0" text="Welcome back">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <AnchorPane layoutY="213.0" prefHeight="515.0" prefWidth="232.0">
+               <children>
+                  <Button fx:id="bookBtn" layoutX="30.0" layoutY="136.0" mnemonicParsing="false"
+                     onAction="#navigate" prefHeight="37.0" prefWidth="172.0"
+                     style="-fx-background-color: transparent; -fx-cursor: hand;" text="Book Manage">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cdBtn" layoutX="30.0" layoutY="202.0" mnemonicParsing="false"
+                     onAction="#navigate" prefHeight="37.0" prefWidth="172.0"
+                     style="-fx-background-color: transparent; -fx-cursor: hand;" text="CD Manage">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="dvdBtn" layoutX="30.0" layoutY="266.0" mnemonicParsing="false"
+                     onAction="#navigate" prefHeight="37.0" prefWidth="172.0"
+                     style="-fx-background-color: transparent; -fx-cursor: hand;" text="DVD Manage">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="59.0" layoutY="430.0" mnemonicParsing="false"
+                     onMouseClicked="#logout" prefHeight="37.0" prefWidth="114.0"
+                     style="-fx-cursor: hand;" text="LOG OUT">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="homeBtn" layoutX="30.0" layoutY="71.0" mnemonicParsing="false"
+                     onAction="#navigate" prefHeight="37.0" prefWidth="172.0"
+                     style="-fx-background-color: transparent; -fx-cursor: hand;" text="Media">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="232.0" layoutY="60.0" prefHeight="728.0" prefWidth="1134.0"
+         style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0"
+         AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="homeForm" layoutX="9.0" layoutY="9.0" prefHeight="715.0"
+               prefWidth="1115.0" style="-fx-border-color: gray;" AnchorPane.bottomAnchor="4.0"
+               AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
+               <children>
+                  <TableView fx:id="mediaTableView" layoutX="12.0" layoutY="12.0" prefHeight="428.0"
+                     prefWidth="1089.0">
+                     <columns>
+                        <TableColumn fx:id="mediaIDCol" prefWidth="120.0" text="Media ID" />
+                        <TableColumn fx:id="mediaTypeCol" prefWidth="151.0" text="Type" />
+                        <TableColumn fx:id="mediaCategoryCol" prefWidth="151.0" text="Category" />
+                        <TableColumn fx:id="mediaValueCol" prefWidth="172.0" text="Value" />
+                        <TableColumn fx:id="mediaPriceCol" prefWidth="157.0" text="Price" />
+                        <TableColumn fx:id="mediaTitleCol" prefWidth="177.0" text="Title" />
+                        <TableColumn fx:id="mediaQuantityCol" prefWidth="159.0" text="Quantity" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane layoutX="13.0" layoutY="452.0" prefHeight="213.0" prefWidth="1089.0">
+                     <children>
+                        <AnchorPane layoutX="69.0" layoutY="13.0" prefHeight="187.0"
+                           prefWidth="283.0"
+                           style="-fx-background-color: linear-gradient(to bottom right, #0077be, white)linear-gradient(to bottom right, #0077be, white); -fx-background-radius: 8;"
+                           AnchorPane.bottomAnchor="12.600000000000023" AnchorPane.leftAnchor="69.0"
+                           AnchorPane.rightAnchor="737.4" AnchorPane.topAnchor="13.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="88.0" layoutY="143.0"
+                                 prefHeight="25.0" prefWidth="107.0" text="Total Books"
+                                 textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalBook" alignment="CENTER_RIGHT" layoutX="162.0"
+                                 layoutY="26.0" prefHeight="25.0" prefWidth="107.0" text="20"
+                                 textFill="WHITE">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="403.0" layoutY="13.0" prefHeight="187.0"
+                           prefWidth="283.0"
+                           style="-fx-background-color: linear-gradient(to bottom right, #0077be, white); -fx-background-radius: 8;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="88.0" layoutY="143.0"
+                                 prefHeight="25.0" prefWidth="107.0" text="Total CDs"
+                                 textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalCD" alignment="CENTER_RIGHT" layoutX="162.0"
+                                 layoutY="14.0" prefHeight="25.0" prefWidth="107.0" text="20"
+                                 textFill="WHITE">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="745.0" layoutY="13.0" prefHeight="187.0"
+                           prefWidth="283.0"
+                           style="-fx-background-color: linear-gradient(to bottom right, #0077be, white)linear-gradient(to bottom right, #0077be, white); -fx-background-radius: 8;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="88.0" layoutY="143.0"
+                                 prefHeight="25.0" prefWidth="107.0" text="Total DVDs"
+                                 textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalDVD" alignment="CENTER_RIGHT" layoutX="156.0"
+                                 layoutY="14.0" prefHeight="25.0" prefWidth="107.0" text="20"
+                                 textFill="WHITE">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bookForm" layoutX="9.0" layoutY="9.0" prefHeight="705.0"
+               prefWidth="1115.0" style="-fx-border-color: gray;" visible="false"
+               AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="9.0"
+               AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
+               <children>
+                  <TableView fx:id="bookTableView" layoutX="12.0" layoutY="12.0" prefHeight="360.0"
+                     prefWidth="1089.0">
+                     <columns>
+                        <TableColumn fx:id="bookIDCol" prefWidth="95.0" text="Book ID" />
+                        <TableColumn fx:id="bookCategoryCol" prefWidth="112.0" text="Book Category" />
+                        <TableColumn fx:id="bookTitleCol" prefWidth="104.0" text="Title" />
+                        <TableColumn fx:id="bookAuthorCol" minWidth="0.0" prefWidth="0.0"
+                           text="Author" />
+                        <TableColumn fx:id="bookCoverTypeCol" prefWidth="118.0" text="Cover Type" />
+                        <TableColumn fx:id="bookPublisherCol" prefWidth="96.0" text="Publisher" />
+                        <TableColumn fx:id="bookPublishDateCol" prefWidth="108.0"
+                           text="Publish Date" />
+                        <TableColumn fx:id="bookNumPagesCol" prefWidth="84.0" text="Num of Pages" />
+                        <TableColumn fx:id="bookLanguageCol" minWidth="8.0" prefWidth="81.0"
+                           text="Language" />
+                        <TableColumn fx:id="bookValueCol" prefWidth="88.0" text="Value" />
+                        <TableColumn fx:id="bookPriceCol" minWidth="0.0" prefWidth="98.0"
+                           text="Price" />
+                        <TableColumn fx:id="bookQuantityCol" minWidth="0.0" prefWidth="104.0"
+                           text="Quantity" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="labelBookId" alignment="CENTER" layoutX="27.0" layoutY="400.0"
+                     prefHeight="20.0" prefWidth="59.0" text="ID :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookId" layoutX="94.0" layoutY="397.0" visible="false" />
+                  <Label fx:id="labelBookTitle" alignment="CENTER" layoutX="21.0" layoutY="448.0"
+                     prefHeight="20.0" prefWidth="65.0" text="Title :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookTitle" layoutX="94.0" layoutY="445.0" visible="false" />
+                  <Label fx:id="labelBookValue" alignment="CENTER" layoutX="21.0" layoutY="509.0"
+                     prefHeight="20.0" prefWidth="65.0" text="Value :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookValue" layoutX="95.0" layoutY="506.0" visible="false" />
+                  <Label fx:id="labelBookPrice" alignment="CENTER" layoutX="21.0" layoutY="559.0"
+                     prefHeight="20.0" prefWidth="65.0" text="Price :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookPrice" layoutX="95.0" layoutY="556.0" visible="false" />
+                  <Label fx:id="labelBookQuantity" alignment="CENTER" layoutX="2.0" layoutY="608.0"
+                     prefHeight="20.0" prefWidth="84.0" text="Quantity :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookQuantity" layoutX="95.0" layoutY="605.0" visible="false" />
+                  <Label fx:id="labelBookAuthor" alignment="CENTER" layoutX="342.0" layoutY="400.0"
+                     prefHeight="20.0" prefWidth="59.0" text="Author :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookAuthor" layoutX="409.0" layoutY="397.0" visible="false" />
+                  <Label fx:id="labelBookCover" alignment="CENTER" layoutX="316.0" layoutY="448.0"
+                     prefHeight="20.0" prefWidth="84.0" text="Cover Type :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelBookPublisher" alignment="CENTER" layoutX="325.0"
+                     layoutY="510.0" prefHeight="20.0" prefWidth="76.0" text="Publisher :"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookPublisher" layoutX="409.0" layoutY="507.0" visible="false" />
+                  <Label fx:id="labelBookPubDate" alignment="CENTER" layoutX="306.0" layoutY="559.0"
+                     prefHeight="20.0" prefWidth="95.0" text="Publish Date :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelBookPages" alignment="CENTER" layoutX="294.0" layoutY="608.0"
+                     prefHeight="20.0" prefWidth="107.0" text="Num of Pages :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookPages" layoutX="409.0" layoutY="605.0" visible="false" />
+                  <Label fx:id="labelBookLanguage" alignment="CENTER" layoutX="603.0"
+                     layoutY="401.0" prefHeight="20.0" prefWidth="84.0" text="Language :"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookLanguage" layoutX="695.0" layoutY="398.0" visible="false" />
+                  <ComboBox fx:id="bookCover" layoutX="409.0" layoutY="446.0" prefWidth="150.0"
+                     promptText="Select" visible="false">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Paperback" />
+                           <String fx:value="Hardcover" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <DatePicker fx:id="bookPubDate" layoutX="409.0" layoutY="557.0" prefHeight="25.0"
+                     prefWidth="149.0" visible="false" />
+                  <Label fx:id="labelBookCategory" alignment="CENTER" layoutX="603.0"
+                     layoutY="450.0" prefHeight="20.0" prefWidth="84.0" text="Category :"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookCategory" layoutX="695.0" layoutY="447.0" visible="false" />
+                  <Button layoutX="931.0" layoutY="392.0" mnemonicParsing="false"
+                     onAction="#createBook" prefHeight="25.0" prefWidth="95.0" text="CREATE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="931.0" layoutY="459.0" mnemonicParsing="false"
+                     onAction="#updateBook" prefHeight="25.0" prefWidth="95.0" text="UPDATE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="931.0" layoutY="529.0" mnemonicParsing="false"
+                     onAction="#deleteBook" prefHeight="25.0" prefWidth="95.0" text="DELETE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <!--                  <Button layoutX="614.0" layoutY="504.0" mnemonicParsing="false"
+                  onAction="#uploadMediaImage" prefHeight="25.0" prefWidth="137.0" text="Upload
+                  Image">-->
+                  <!--                     <font>-->
+                  <!--                        <Font size="14.0" />-->
+                  <!--                     </font>-->
+                  <!--                  </Button>-->
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="cdForm" layoutX="9.0" layoutY="9.0" prefHeight="705.0"
+               prefWidth="1115.0" style="-fx-border-color: gray;" visible="false"
+               AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="9.0"
+               AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
+               <children>
+                  <TableView fx:id="cdTableView" layoutX="12.0" layoutY="12.0" prefHeight="360.0"
+                     prefWidth="1089.0">
+                     <columns>
+                        <TableColumn fx:id="cdIDCol" prefWidth="96.0" text="CD ID" />
+                        <TableColumn fx:id="cdTitleCol" prefWidth="106.0" text="Title" />
+                        <TableColumn fx:id="cdCategoryCol" prefWidth="112.0" text="Category" />
+                        <TableColumn fx:id="cdPriceCol" prefWidth="110.0" text="Price" />
+                        <TableColumn fx:id="cdValueCol" prefWidth="144.0" text="Value" />
+                        <TableColumn fx:id="cdQuantityCol" prefWidth="112.0" text="Quantity" />
+                        <TableColumn fx:id="cdArtistCol" prefWidth="137.0" text="Artist" />
+                        <TableColumn fx:id="cdRecordCol" prefWidth="155.0" text="Record Label" />
+                        <TableColumn fx:id="cdMusicTypeCol" prefWidth="121.0" text="Music Type" />
+                        <TableColumn fx:id="cdReleasedCol" prefWidth="107.0" text="Released Date" />
+                     </columns>
+                  </TableView>
+
+                  <!-- CD components -->
+                  <!-- Các thành phần của CD, được cập nhật với visible="false" -->
+                  <Label fx:id="labelCdId" layoutX="111.0" layoutY="436.0" text="ID" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdId" layoutX="171.0" layoutY="433.0" visible="false" />
+
+                  <Label fx:id="labelCdTitle" layoutX="104.0" layoutY="493.0" text="Title"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdTitle" layoutX="171.0" layoutY="490.0" visible="false" />
+
+                  <Label fx:id="labelCdValue" layoutX="100.0" layoutY="618.0" text="Value"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdValue" layoutX="171.0" layoutY="615.0" visible="false" />
+
+                  <Label fx:id="labelCdPrice" layoutX="403.0" layoutY="618.0" text="Price"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdPrice" layoutX="482.0" layoutY="615.0" visible="false" />
+
+                  <Label fx:id="labelCdQuantity" layoutX="721.0" layoutY="509.0" text="Quantity"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdQuantity" layoutX="796.0" layoutY="506.0" visible="false" />
+
+                  <Label fx:id="labelCdArtist" layoutX="400.0" layoutY="436.0" text="Artist"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdArtist" layoutX="482.0" layoutY="429.0" visible="false" />
+
+                  <Label fx:id="labelCdRecordLabel" layoutX="376.0" layoutY="493.0"
+                     text="Record Label"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdRecordLabel" layoutX="482.0" layoutY="490.0" visible="false" />
+
+                  <Label fx:id="labelCdReleasedDate" layoutX="372.0" layoutY="550.0"
+                     text="Released Date" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="cdReleasedDate" layoutX="482.0" layoutY="547.0" visible="false" />
+
+                  <Label fx:id="labelCdCategory" layoutX="97.0" layoutY="550.0" text="Category"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdCategory" layoutX="171.0" layoutY="547.0" visible="false" />
+
+                  <Label fx:id="labelCdType" layoutX="734.0" layoutY="585.0" text="Type"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdType" layoutX="796.0" layoutY="582.0" visible="false" />
+
+                  <Label fx:id="labelCdMusicType" layoutX="712.0" layoutY="436.0" prefHeight="20.0"
+                     prefWidth="75.0" text="Music Type" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cdMusicType" layoutX="796.0" layoutY="429.0" prefWidth="150.0"
+                     visible="false" />
+
+                  <Button layoutX="1008.0" layoutY="405.0" mnemonicParsing="false"
+                     onAction="#createCD"
+                     prefHeight="25.0" prefWidth="95.0" text="CREATE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="1008.0" layoutY="472.0" mnemonicParsing="false"
+                     onAction="#updateCD"
+                     prefHeight="25.0" prefWidth="95.0" text="UPDATE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="1008.0" layoutY="542.0" mnemonicParsing="false"
+                     onAction="#deleteCD"
+                     prefHeight="25.0" prefWidth="95.0" text="DELETE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="dvdForm" layoutX="9.0" layoutY="9.0" prefHeight="715.0"
+               prefWidth="1115.0" style="-fx-border-color: gray;" visible="false"
+               AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="9.0"
+               AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
+               <children>
+                  <TableView fx:id="dvdTableView" layoutX="12.0" layoutY="12.0" prefHeight="360.0"
+                     prefWidth="1089.0">
+                     <columns>
+                        <TableColumn fx:id="dvdIDCol" prefWidth="81.0" text="DVD ID" />
+                        <TableColumn fx:id="dvdTypeCol" prefWidth="77.0" text="Disc Type" />
+                        <TableColumn fx:id="dvdTitleCol" prefWidth="87.0" text="Title" />
+                        <TableColumn fx:id="dvdDirectorCol" prefWidth="93.0" text="Director" />
+                        <TableColumn fx:id="dvdRuntimeCol" prefWidth="93.0" text="Runtime" />
+                        <TableColumn fx:id="dvdStudioCol" minWidth="0.0" prefWidth="89.0"
+                           text="Studio" />
+                        <TableColumn fx:id="dvdSubtitleCol" prefWidth="103.0" text="Subtitle" />
+                        <TableColumn fx:id="dvdReleaseCol" prefWidth="102.0" text="Released Date" />
+                        <TableColumn fx:id="dvdFilmTypeCol" prefWidth="92.0" text="Film Type" />
+                        <TableColumn fx:id="dvdValueCol" prefWidth="88.0" text="Value" />
+                        <TableColumn fx:id="dvdPriceCol" minWidth="0.0" prefWidth="87.0"
+                           text="Price" />
+                        <TableColumn fx:id="dvdQuantityCol" minWidth="0.0" prefWidth="96.0"
+                           text="Quantity" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="labelDvdId" alignment="CENTER" layoutX="27.0" layoutY="400.0"
+                     prefHeight="20.0" prefWidth="59.0" text="ID :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdId" layoutX="94.0" layoutY="397.0" visible="false" />
+                  <Label fx:id="labelDvdTitle" alignment="CENTER" layoutX="21.0" layoutY="448.0"
+                     prefHeight="20.0" prefWidth="65.0" text="Title :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdTitle" layoutX="94.0" layoutY="445.0" visible="false" />
+                  <Label fx:id="labelDvdValue" alignment="CENTER" layoutX="21.0" layoutY="509.0"
+                     prefHeight="20.0" prefWidth="65.0" text="Value :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdValue" layoutX="95.0" layoutY="506.0" visible="false" />
+                  <Label fx:id="labelDvdPrice" alignment="CENTER" layoutX="21.0" layoutY="559.0"
+                     prefHeight="20.0" prefWidth="65.0" text="Price :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdPrice" layoutX="95.0" layoutY="556.0" visible="false" />
+                  <Label fx:id="labelDvdQuantity" alignment="CENTER" layoutX="2.0" layoutY="608.0"
+                     prefHeight="20.0" prefWidth="84.0" text="Quantity :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdQuantity" layoutX="95.0" layoutY="605.0" visible="false" />
+                  <Label fx:id="labelDvdDiscType" alignment="CENTER" layoutX="330.0" layoutY="400.0"
+                     prefHeight="20.0" prefWidth="59.0" text="Disc Type :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdDiscType" layoutX="409.0" layoutY="397.0" visible="false" />
+                  <Label fx:id="labelDvdDirector" alignment="CENTER" layoutX="316.0" layoutY="448.0"
+                     prefHeight="20.0" prefWidth="84.0" text="Director :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdDirector" layoutX="409.0" layoutY="446.0" prefWidth="150.0"
+                     visible="false"></TextField>
+                  <Label fx:id="labelDvdRuntime" alignment="CENTER" layoutX="325.0"
+                     layoutY="510.0" prefHeight="20.0" prefWidth="76.0" text="Runtime :"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdRuntime" layoutX="409.0" layoutY="507.0" visible="false" />
+                  <Label fx:id="labelDvdReleaseDate" alignment="CENTER" layoutX="306.0"
+                     layoutY="559.0"
+                     prefHeight="20.0" prefWidth="95.0" text="Release Date :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dvdReleaseDate" layoutX="409.0" layoutY="557.0"
+                     prefHeight="25.0"
+                     prefWidth="149.0" visible="false" />
+                  <Label fx:id="labelDvdStudio" alignment="CENTER" layoutX="294.0" layoutY="608.0"
+                     prefHeight="20.0" prefWidth="107.0" text="Studio :" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdStudio" layoutX="409.0" layoutY="605.0" visible="false" />
+                  <Label fx:id="labelDvdSubtitle" alignment="CENTER" layoutX="603.0"
+                     layoutY="401.0" prefHeight="20.0" prefWidth="84.0" text="Subtitle :"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdSubtitle" layoutX="695.0" layoutY="398.0" visible="false" />
+
+                  <Label fx:id="labelDvdFilmType" alignment="CENTER" layoutX="603.0"
+                     layoutY="450.0" prefHeight="20.0" prefWidth="84.0" text="Film Type :"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdFilmType" layoutX="695.0" layoutY="447.0" visible="false" />
+
+                  <Label fx:id="labelDvdCategory" alignment="CENTER" layoutX="603.0"
+                     layoutY="499.0" prefHeight="20.0" prefWidth="84.0" text="Category :"
+                     visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dvdCategory" layoutX="695.0" layoutY="498.0" visible="false" />
+                  <Button layoutX="931.0" layoutY="392.0" mnemonicParsing="false"
+                     onAction="#createDVD" prefHeight="25.0" prefWidth="95.0" text="CREATE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="931.0" layoutY="459.0" mnemonicParsing="false"
+                     onAction="#updateDVD" prefHeight="25.0" prefWidth="95.0" text="UPDATE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="931.0" layoutY="529.0" mnemonicParsing="false"
+                     onAction="#deleteDVD" prefHeight="25.0" prefWidth="95.0" text="DELETE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
